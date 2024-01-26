@@ -53,7 +53,7 @@ jobs:
 
       - name: Run Fortify SAST scan
         run: |
-          ./bin/scancentral package -bt none -o fortify_package.zip
+          ./bin/scancentral package -bt mvn -o fortify_package.zip
           UPLOAD_OUTPUT=$(java -jar FodUpload.jar \
             -z fortify_package.zip \
             -ep SingleScanOnly \
